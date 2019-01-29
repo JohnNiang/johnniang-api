@@ -11,7 +11,6 @@ import java.lang.reflect.Type;
  * Convenience for input dto.
  *
  * @author johnniang
- * @date 11/27/18
  */
 public abstract class AbstractInputConverter<DOMAIN> implements InputConverter<DOMAIN> {
 

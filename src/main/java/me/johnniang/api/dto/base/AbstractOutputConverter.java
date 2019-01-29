@@ -12,7 +12,6 @@ import java.lang.reflect.Type;
  * Abstract output dto converter. It must be extended by DTO.
  *
  * @author johnniang
- * @date 11/27/18
  */
 public abstract class AbstractOutputConverter<DTO, DOMAIN> implements OutputConverter<DTO, DOMAIN> {
 
