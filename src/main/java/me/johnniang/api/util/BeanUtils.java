@@ -36,7 +36,7 @@ public class BeanUtils {
      *
      * @param clazz   destination clazz
      * @param sources source object collection
-     * @param <T>     destination class generice type
+     * @param <T>     destination class generic type
      * @return copied destination object list
      */
     public static <T> List<T> transfromInBatch(final Class<T> clazz, Collection<?> sources) {
@@ -49,7 +49,7 @@ public class BeanUtils {
      *
      * @param clazz destination clazz
      * @param src   source object
-     * @param <T>   destination class generice type
+     * @param <T>   destination class generic type
      * @return copied destination object
      */
     public static <T> T transfrom(final Class<T> clazz, final Object src) {
