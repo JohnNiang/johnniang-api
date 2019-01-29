@@ -1,0 +1,8 @@
+spring:
+  jpa:
+    show-sql: true
+    database: h2
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:file:~/johnniang-api
