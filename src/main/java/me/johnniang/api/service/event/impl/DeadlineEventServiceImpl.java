@@ -1,8 +1,8 @@
-package me.johnniang.api.service.impl;
+package me.johnniang.api.service.event.impl;
 
-import me.johnniang.api.entity.DeadlineEvent;
-import me.johnniang.api.repository.DeadlineEventRepository;
-import me.johnniang.api.service.DeadlineEventService;
+import me.johnniang.api.entity.event.DeadlineEvent;
+import me.johnniang.api.repository.event.DeadlineEventRepository;
+import me.johnniang.api.service.event.DeadlineEventService;
 import me.johnniang.api.service.base.AbstractService;
 import org.springframework.stereotype.Service;
 

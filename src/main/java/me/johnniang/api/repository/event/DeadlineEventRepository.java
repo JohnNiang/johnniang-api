@@ -1,6 +1,6 @@
-package me.johnniang.api.repository;
+package me.johnniang.api.repository.event;
 
-import me.johnniang.api.entity.DeadlineEvent;
+import me.johnniang.api.entity.event.DeadlineEvent;
 import me.johnniang.api.repository.base.BaseRepository;
 
 /**

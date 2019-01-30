@@ -1,4 +1,4 @@
-package me.johnniang.api.controller.v1;
+package me.johnniang.api.controller.v1.event;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author johnniang
  */
 @RestController
-@RequestMapping("/api/v1/deadline_events")
+@RequestMapping("/api/v1/events/deadline")
 public class DeadlineEventController {
 
 }

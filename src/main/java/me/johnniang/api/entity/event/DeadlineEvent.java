@@ -1,6 +1,6 @@
-package me.johnniang.api.entity;
+package me.johnniang.api.entity.event;
 
-import me.johnniang.api.entity.base.BaseEntity;/**/
+import me.johnniang.api.entity.base.BaseEntity;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.annotations.SQLDelete;
@@ -16,10 +16,10 @@ import java.util.Objects;
  * @author johnniang
  */
 @Entity
-@Table(name = "active_events")
-@SQLDelete(sql = "update active_events set deleted = true where id = ?")
+@Table(name = "deadline_events")
+@SQLDelete(sql = "update deadline_events set deleted = true where id = ?")
 @Where(clause = "deleted = false")
-public class ActiveEvent extends BaseEntity<Integer> {
+public class DeadlineEvent extends BaseEntity<Integer> {
 
     @Column(name = "name", columnDefinition = "varchar(50) not null")
     private String name;
@@ -27,9 +27,9 @@ public class ActiveEvent extends BaseEntity<Integer> {
     @Column(name = "avatar", columnDefinition = "varchar(2048) not null")
     private String avatar;
 
-    @Column(name = "start_time", columnDefinition = "timestamp not null")
+    @Column(name = "dead_time", columnDefinition = "timestamp not null")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date startTime;
+    private Date deadTime;
 
     @Column(name = "description", columnDefinition = "varchar(1024) not null default ''")
     private String description;
@@ -50,12 +50,12 @@ public class ActiveEvent extends BaseEntity<Integer> {
         this.avatar = avatar;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getDeadTime() {
+        return deadTime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setDeadTime(Date deadTime) {
+        this.deadTime = deadTime;
     }
 
     public String getDescription() {
@@ -70,16 +70,17 @@ public class ActiveEvent extends BaseEntity<Integer> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ActiveEvent that = (ActiveEvent) o;
+        if (!super.equals(o)) return false;
+        DeadlineEvent that = (DeadlineEvent) o;
         return Objects.equals(name, that.name) &&
                 Objects.equals(avatar, that.avatar) &&
-                Objects.equals(startTime, that.startTime) &&
+                Objects.equals(deadTime, that.deadTime) &&
                 Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, avatar, startTime, description);
+        return Objects.hash(super.hashCode(), name, avatar, deadTime, description);
     }
 
     @Override

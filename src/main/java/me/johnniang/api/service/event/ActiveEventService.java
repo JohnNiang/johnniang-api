@@ -1,6 +1,6 @@
-package me.johnniang.api.service;
+package me.johnniang.api.service.event;
 
-import me.johnniang.api.entity.ActiveEvent;
+import me.johnniang.api.entity.event.ActiveEvent;
 import me.johnniang.api.service.base.Service;
 
 /**

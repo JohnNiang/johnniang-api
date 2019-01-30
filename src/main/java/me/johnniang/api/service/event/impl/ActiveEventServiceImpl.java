@@ -1,8 +1,8 @@
-package me.johnniang.api.service.impl;
+package me.johnniang.api.service.event.impl;
 
-import me.johnniang.api.entity.ActiveEvent;
-import me.johnniang.api.repository.ActiveEventRepository;
-import me.johnniang.api.service.ActiveEventService;
+import me.johnniang.api.entity.event.ActiveEvent;
+import me.johnniang.api.repository.event.ActiveEventRepository;
+import me.johnniang.api.service.event.ActiveEventService;
 import me.johnniang.api.service.base.AbstractService;
 import org.springframework.stereotype.Service;
 

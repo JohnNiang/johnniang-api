@@ -1,7 +1,7 @@
-package me.johnniang.api.dto;
+package me.johnniang.api.dto.event;
 
 import me.johnniang.api.dto.base.AbstractOutputConverter;
-import me.johnniang.api.entity.ActiveEvent;
+import me.johnniang.api.entity.event.ActiveEvent;
 
 import java.util.Date;
 
