@@ -1,4 +1,4 @@
-package me.johnniang.api.config.properties;
+package me.johnniang.api.config;
 
 import com.fasterxml.classmate.TypeResolver;
 import io.swagger.models.auth.In;

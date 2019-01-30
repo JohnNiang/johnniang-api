@@ -23,21 +23,21 @@ public abstract class BaseEntity<T> {
     /**
      * 创建时间戳
      */
-    @Column(name = "create_time", columnDefinition = "timestamp not null default CURRENT_TIME")
+    @Column(name = "create_time", columnDefinition = "timestamp default CURRENT_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
 
     /**
      * 更新时间戳
      */
-    @Column(name = "update_time", columnDefinition = "timestamp not null default CURRENT_TIME")
+    @Column(name = "update_time", columnDefinition = "timestamp default CURRENT_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
     /**
      * 是否已删除
      */
-    @Column(name = "deleted", columnDefinition = "TINYINT not null default 0")
+    @Column(name = "deleted", columnDefinition = "TINYINT default 0")
     private Boolean deleted;
 
     @PrePersist

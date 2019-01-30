@@ -1,6 +1,7 @@
 package me.johnniang.api.entity.event;
 
 import me.johnniang.api.entity.base.BaseEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.annotations.SQLDelete;
@@ -31,11 +32,24 @@ public class ActiveEvent extends BaseEntity<Integer> {
     @Temporal(TemporalType.TIMESTAMP)
     private Date startTime;
 
-    @Column(name = "description", columnDefinition = "varchar(1024) not null default ''")
+    @Column(name = "description", columnDefinition = "varchar(1024) default ''")
     private String description;
 
-    @Column(name = "is_deactive", columnDefinition = "TINYINT not null default 0")
+    @Column(name = "is_deactive", columnDefinition = "TINYINT default 0")
     private Boolean isDeactive;
+
+    @Override
+    protected void prePersist() {
+        super.prePersist();
+
+        if (StringUtils.isBlank(description)) {
+            description = "";
+        }
+
+        if (isDeactive == null) {
+            isDeactive = false;
+        }
+    }
 
     public String getName() {
         return name;
@@ -67,6 +81,14 @@ public class ActiveEvent extends BaseEntity<Integer> {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getDeactive() {
+        return isDeactive;
+    }
+
+    public void setDeactive(Boolean deactive) {
+        isDeactive = deactive;
     }
 
     @Override

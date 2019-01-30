@@ -13,6 +13,8 @@ import java.util.Objects;
  */
 public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOutputDTO, ActiveEvent> {
 
+    private Integer id;
+
     private String name;
 
     private String avatar;
@@ -22,6 +24,14 @@ public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOut
     private String description;
 
     private Boolean isDeactive;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -68,7 +78,8 @@ public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOut
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ActiveEventOutputDTO that = (ActiveEventOutputDTO) o;
-        return Objects.equals(name, that.name) &&
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(avatar, that.avatar) &&
                 Objects.equals(startTime, that.startTime) &&
                 Objects.equals(description, that.description) &&
@@ -77,6 +88,6 @@ public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOut
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, avatar, startTime, description, isDeactive);
+        return Objects.hash(id, name, avatar, startTime, description, isDeactive);
     }
 }
