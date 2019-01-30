@@ -1,27 +1,25 @@
 package me.johnniang.api.dto.event;
 
 import me.johnniang.api.dto.base.AbstractOutputConverter;
-import me.johnniang.api.entity.event.ActiveEvent;
+import me.johnniang.api.entity.event.DeadlineEvent;
 
 import java.util.Date;
 import java.util.Objects;
 
 /**
- * Active event output dto.
+ * Deadline event outupt dto.
  *
  * @author johnniang
  */
-public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOutputDTO, ActiveEvent> {
+public class DeadlineEventOutputDTO extends AbstractOutputConverter<DeadlineEventOutputDTO, DeadlineEvent> {
 
     private String name;
 
     private String avatar;
 
-    private Date startTime;
+    private Date deadTime;
 
     private String description;
-
-    private Boolean isDeactive;
 
     public String getName() {
         return name;
@@ -39,12 +37,12 @@ public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOut
         this.avatar = avatar;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getDeadTime() {
+        return deadTime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setDeadTime(Date deadTime) {
+        this.deadTime = deadTime;
     }
 
     public String getDescription() {
@@ -55,28 +53,20 @@ public class ActiveEventOutputDTO extends AbstractOutputConverter<ActiveEventOut
         this.description = description;
     }
 
-    public Boolean getDeactive() {
-        return isDeactive;
-    }
-
-    public void setDeactive(Boolean deactive) {
-        isDeactive = deactive;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ActiveEventOutputDTO that = (ActiveEventOutputDTO) o;
+        DeadlineEventOutputDTO that = (DeadlineEventOutputDTO) o;
         return Objects.equals(name, that.name) &&
                 Objects.equals(avatar, that.avatar) &&
-                Objects.equals(startTime, that.startTime) &&
-                Objects.equals(description, that.description) &&
-                Objects.equals(isDeactive, that.isDeactive);
+                Objects.equals(deadTime, that.deadTime) &&
+                Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, avatar, startTime, description, isDeactive);
+        return Objects.hash(name, avatar, deadTime, description);
     }
+
 }

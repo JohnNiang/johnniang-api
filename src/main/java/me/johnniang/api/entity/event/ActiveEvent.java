@@ -1,6 +1,6 @@
 package me.johnniang.api.entity.event;
 
-import me.johnniang.api.entity.base.BaseEntity;/**/
+import me.johnniang.api.entity.base.BaseEntity;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.annotations.SQLDelete;
@@ -33,6 +33,9 @@ public class ActiveEvent extends BaseEntity<Integer> {
 
     @Column(name = "description", columnDefinition = "varchar(1024) not null default ''")
     private String description;
+
+    @Column(name = "is_deactive", columnDefinition = "TINYINT not null default 0")
+    private Boolean isDeactive;
 
     public String getName() {
         return name;
